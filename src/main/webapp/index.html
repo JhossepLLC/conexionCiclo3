@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <style>
+            .red{
+                color: red;
+            }
+            .yelow{
+                color:#ffcc00;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h3>Lista de Posts</h3>
+            <hr>
+            <button class="btn btn-primary" style="margin-bottom: 20px; " data-toggle="modal" data-target="#modalGuardar" data-whatever="@mdo">Add</button>
+            <div class="row">
+                <div class="col">
+                    <table class="table" id="tablita">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">TITULO</th>
+                                <th scope="col">DESCRIPCION</th>
+                                <th scope="col" colspan="2">ACCION</th>
+                            </tr>
+                        </thead>
+                        <tbody>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Guardar Post -->
+        <div class="modal fade" id="modalGuardar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nuevo Post</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Título:</label>
+                                <input type="text" class="form-control" id="titulo" placeholder="Título">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Descripción:</label>
+                                <textarea class="form-control" id="descripcion"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="guardar">Registrar Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Modificar Post -->
+        <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modificar Post</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Título:</label>
+                                <input type="text" class="form-control" id="editar_titulo" placeholder="Título">
+                                <input type="hidden" class="form-control" id="idpost" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Descripción:</label>
+                                <textarea class="form-control" id="editar_descripcion"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="modificar">Modificar Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/Jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+        <script src="js/post.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
